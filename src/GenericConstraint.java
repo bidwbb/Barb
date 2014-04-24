@@ -58,7 +58,7 @@ public class GenericConstraint implements ConstraintInterface{
     			if (!(grid[i][j].spot.spotContent=="")){
     				for (int row=x; row<x+xSize; row++){
     					for (int column=y; column<y+ySize; column++){
-    						if ((row != i && column != j && 
+    						if (((row != i || column != j) && 
     								grid[row][column].spot.spotContent.equals(grid[i][j].spot.spotContent)) &&
     								!(grid[i][j].spot.spotContent.equals("")))
     							return false;		
