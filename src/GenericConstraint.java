@@ -51,17 +51,22 @@ public class GenericConstraint implements ConstraintInterface{
     }
 
     public boolean mightConstraint(){
-	for (int i=x; i<x+xSize-1; i++){
-	    for (int j=y; j<y+ySize-1; j++){
-		if (!(grid[i][j].spot.spotContent=="")){
-		    for (int row=x; row<x+xSize-1; row++){
-			for (int column=y; column<y+ySize-1; column++){
-			    if ((row != i && column != j && grid[row][column].spot.spotContent.equals(grid[i][j].spot.spotContent))&&!(grid[i][j].spot.spotContent.equals("")))return false;		
-			}
-		    }
-		}
-	    }
-	}
+    	for (int i=x; i<x+xSize; i++){
+    		for (int j=y; j<y+ySize; j++){
+    			if (i>8 || j>8) System.out.println("*** the coords are " + i + "," + j + " and x,y are " + x + "," + y
+    					+ "," + xSize + "," + ySize);
+    			if (!(grid[i][j].spot.spotContent=="")){
+    				for (int row=x; row<x+xSize; row++){
+    					for (int column=y; column<y+ySize; column++){
+    						if ((row != i && column != j && 
+    								grid[row][column].spot.spotContent.equals(grid[i][j].spot.spotContent)) &&
+    								!(grid[i][j].spot.spotContent.equals("")))
+    							return false;		
+    					}
+    				}
+    			}
+    		}
+    	}
 	return true;
     }
 }

@@ -65,10 +65,10 @@ public class SudokuGame implements GameInterface,ActionListener{
 	    }
 	}
 	for (int i=0;i<9;i++){
-	    this.setConstraint(0,i,1,9);
+	    this.setConstraint(0,i,9,1);
 	}
 	for (int i=0; i<9;i++){
-	    this.setConstraint(i,0,9,1);
+	    this.setConstraint(i,0,1,9);
 	}
 
 	for (int i=0; i<9;i+=3){
