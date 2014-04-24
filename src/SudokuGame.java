@@ -87,7 +87,7 @@ public class SudokuGame implements GameInterface,ActionListener{
 	}
 
 	public boolean label(int i, int j, GenericButton[][]spots, GameInterface game, String[] possibleValues){
-		boolean wordy = (j<4 && i < 8);
+		boolean wordy = true;
 		if (wordy) System.out.println("the coords are " + i + "," + j);
 
 		if (i>=spots.length) return game.checkConstraints();
